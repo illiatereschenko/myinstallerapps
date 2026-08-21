@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyInstaller — Software Installer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND EFFECTS -->
+    <div class="background">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="grid"></div>
+    </div>
+
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <div class="logo-icon">M</div>
+
+            <div>
+                <h1>MyInstaller</h1>
+                <span>Software Installer</span>
+            </div>
+        </div>
+
+
+        <nav>
+            <a href="#programs">Programs</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
+
+
+        <button class="theme-btn" onclick="toggleTheme()">
+            🌙
+        </button>
+
+    </header>
+
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ⚡ YOUR PERSONAL SOFTWARE INSTALLER
+            </div>
+
+
+            <h2>
+                Install everything
+                <span>you need.</span>
+            </h2>
+
+
+            <p>
+                Choose your favorite programs and create
+                your own software package for Windows.
+            </p>
+
+
+            <button
+                class="hero-button"
+                onclick="scrollToPrograms()">
+
+                🚀 Browse Programs
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SEARCH -->
+    <section class="tools" id="programs">
+
+        <div class="search-box">
+
+            <span>🔎</span>
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search programs..."
+                oninput="searchPrograms()"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CATEGORIES -->
+    <section
+        class="categories"
+        id="categories">
+
+        <button
+            class="category active"
+            onclick="filterCategory('all', this)">
+
+            All
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('browsers', this)">
+
+            🌐 Web Browsers
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('torrent', this)">
+
+            📥 File Sharing
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('other', this)">
+
+            🔧 Other
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('messaging', this)">
+
+            💬 Messaging
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('storage', this)">
+
+            ☁️ Online Storage
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('archivers', this)">
+
+            📦 Archivers
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('media', this)">
+
+            🎵 Media
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('vc', this)">
+
+            🧩 VC++
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('imaging', this)">
+
+            🎨 Imaging
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('utilities', this)">
+
+            🛠️ Utilities
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="filterCategory('developer', this)">
+
+            💻 Developer Tools
+
+        </button>
+
+    </section>
+
+
+
+    <!-- PROGRAMS -->
+    <main class="programs-container">
+
+        <div class="section-title">
+
+            <div>
+
+                <span>SOFTWARE CATALOG</span>
+
+                <h2>
+                    Choose your programs
+                </h2>
+
+            </div>
+
+
+            <div class="selected-counter">
+
+                Selected:
+                <strong id="selectedCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="programs"
+            id="programList">
+
+
+
+            <!-- WEB BROWSERS -->
+
+            <div class="category-title">
+                🌐 Web Browsers
+            </div>
+
+
+            <div class="program-card"
+                 data-category="browsers"
+                 data-name="Google Chrome">
+
+                <div class="program-icon">
+                    🌐
+                </div>
+
+                <div class="program-info">
+
+                    <h3>Google Chrome</h3>
+
+                    <p>
+                        Fast and popular web browser.
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="toggleProgram(this,'Google Chrome')">
+
+                    +
+
+                </button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="browsers"
+                 data-name="Mozilla Firefox">
+
+                <div class="program-icon">
+                    🦊
+                </div>
+
+                <div class="program-info">
+
+                    <h3>Mozilla Firefox</h3>
+
+                    <p>
+                        Fast browser focused on privacy.
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="toggleProgram(this,'Mozilla Firefox')">
+
+                    +
+
+                </button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="browsers"
+                 data-name="Microsoft Edge">
+
+                <div class="program-icon">
+                    🌊
+                </div>
+
+                <div class="program-info">
+
+                    <h3>Microsoft Edge</h3>
+
+                    <p>
+                        Modern browser from Microsoft.
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="toggleProgram(this,'Microsoft Edge')">
+
+                    +
+
+                </button>
+
+            </div>
+
+
+
+            <!-- TORRENTS -->
+
+            <div class="category-title">
+                📥 File Sharing (Torrents)
+            </div>
+
+
+            <div class="program-card"
+                 data-category="torrent"
+                 data-name="Transmission">
+
+                <div class="program-icon">
+                    📥
+                </div>
+
+                <div class="program-info">
+
+                    <h3>Transmission</h3>
+
+                    <p>
+                        Lightweight BitTorrent client.
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="toggleProgram(this,'Transmission')">
+
+                    +
+
+                </button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="torrent"
+                 data-name="uTorrent">
+
+                <div class="program-icon">
+                    📥
+                </div>
+
+                <div class="program-info">
+
+                    <h3>uTorrent</h3>
+
+                    <p>
+                        Popular BitTorrent client.
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="toggleProgram(this,'uTorrent')">
+
+                    +
+
+                </button>
+
+            </div>
+
+
+
+            <!-- OTHER -->
+
+            <div class="category-title">
+                🔧 Other
+            </div>
+
+
+            <div class="program-card"
+                 data-category="other"
+                 data-name="Everything">
+
+                <div class="program-icon">
+                    🔎
+                </div>
+
+                <div class="program-info">
+
+                    <h3>Everything</h3>
+
+                    <p>
+                        Extremely fast file search.
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="toggleProgram(this,'Everything')">
+
+                    +
+
+                </button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="other"
+                 data-name="KeePass">
+
+                <div class="program-icon">
+                    🔐
+                </div>
+
+                <div class="program-info">
+
+                    <h3>KeePass</h3>
+
+                    <p>
+                        Password manager.
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="toggleProgram(this,'KeePass')">
+
+                    +
+
+                </button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="other"
+                 data-name="Evernote">
+
+                <div class="program-icon">
+                    📝
+                </div>
+
+                <div class="program-info">
+
+                    <h3>Evernote</h3>
+
+                    <p>
+                        Notes and productivity application.
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="toggleProgram(this,'Evernote')">
+
+                    +
+
+                </button>
+
+            </div>
+
+
+
+            <!-- MESSAGING -->
+
+            <div class="category-title">
+                💬 Messaging
+            </div>
+
+
+            <div class="program-card"
+                 data-category="messaging"
+                 data-name="Viber">
+
+                <div class="program-icon">
+                    💜
+                </div>
+
+                <div class="program-info">
+                    <h3>Viber</h3>
+                    <p>Messaging and calls.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Viber')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="messaging"
+                 data-name="WhatsApp">
+
+                <div class="program-icon">
+                    💚
+                </div>
+
+                <div class="program-info">
+                    <h3>WhatsApp</h3>
+                    <p>Messaging and calls.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'WhatsApp')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="messaging"
+                 data-name="Telegram">
+
+                <div class="program-icon">
+                    ✈️
+                </div>
+
+                <div class="program-info">
+                    <h3>Telegram</h3>
+                    <p>Fast messaging application.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Telegram')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="messaging"
+                 data-name="Zoom">
+
+                <div class="program-icon">
+                    📹
+                </div>
+
+                <div class="program-info">
+                    <h3>Zoom</h3>
+                    <p>Video meetings and calls.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Zoom')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="messaging"
+                 data-name="Discord">
+
+                <div class="program-icon">
+                    🎮
+                </div>
+
+                <div class="program-info">
+                    <h3>Discord</h3>
+                    <p>Community and voice chat.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Discord')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="messaging"
+                 data-name="Thunderbird">
+
+                <div class="program-icon">
+                    📧
+                </div>
+
+                <div class="program-info">
+                    <h3>Thunderbird</h3>
+                    <p>Email client.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Thunderbird')">+</button>
+
+            </div>
+
+
+
+            <!-- ONLINE STORAGE -->
+
+            <div class="category-title">
+                ☁️ Online Storage
+            </div>
+
+
+            <div class="program-card"
+                 data-category="storage"
+                 data-name="Google Drive">
+
+                <div class="program-icon">
+                    ☁️
+                </div>
+
+                <div class="program-info">
+                    <h3>Google Drive</h3>
+                    <p>Cloud storage from Google.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Google Drive')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="storage"
+                 data-name="Dropbox">
+
+                <div class="program-icon">
+                    📦
+                </div>
+
+                <div class="program-info">
+                    <h3>Dropbox</h3>
+                    <p>Cloud storage and file sharing.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Dropbox')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="storage"
+                 data-name="OneDrive">
+
+                <div class="program-icon">
+                    ☁️
+                </div>
+
+                <div class="program-info">
+                    <h3>OneDrive</h3>
+                    <p>Cloud storage from Microsoft.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'OneDrive')">+</button>
+
+            </div>
+
+
+
+            <!-- ARCHIVERS -->
+
+            <div class="category-title">
+                📦 Archivers
+            </div>
+
+
+            <div class="program-card"
+                 data-category="archivers"
+                 data-name="7-Zip">
+
+                <div class="program-icon">
+                    📦
+                </div>
+
+                <div class="program-info">
+                    <h3>7-Zip</h3>
+                    <p>Powerful file archiver.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'7-Zip')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="archivers"
+                 data-name="WinRAR">
+
+                <div class="program-icon">
+                    🗜️
+                </div>
+
+                <div class="program-info">
+                    <h3>WinRAR</h3>
+                    <p>Popular archive manager.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'WinRAR')">+</button>
+
+            </div>
+
+
+
+            <!-- MEDIA -->
+
+            <div class="category-title">
+                🎵 Media
+            </div>
+
+
+            <div class="program-card"
+                 data-category="media"
+                 data-name="iTunes">
+
+                <div class="program-icon">🎵</div>
+
+                <div class="program-info">
+                    <h3>iTunes</h3>
+                    <p>Music and media management.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'iTunes')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="media"
+                 data-name="VLC Media Player">
+
+                <div class="program-icon">🎬</div>
+
+                <div class="program-info">
+                    <h3>VLC Media Player</h3>
+                    <p>Universal media player.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'VLC Media Player')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="media"
+                 data-name="AIMP">
+
+                <div class="program-icon">🎧</div>
+
+                <div class="program-info">
+                    <h3>AIMP</h3>
+                    <p>Audio player for Windows.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'AIMP')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="media"
+                 data-name="Audacity">
+
+                <div class="program-icon">🎙️</div>
+
+                <div class="program-info">
+                    <h3>Audacity</h3>
+                    <p>Audio recording and editing.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Audacity')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="media"
+                 data-name="K-Lite Codec Pack">
+
+                <div class="program-icon">🎞️</div>
+
+                <div class="program-info">
+                    <h3>K-Lite Codec Pack</h3>
+                    <p>Popular collection of media codecs.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'K-Lite Codec Pack')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="media"
+                 data-name="Spotify">
+
+                <div class="program-icon">🎵</div>
+
+                <div class="program-info">
+                    <h3>Spotify</h3>
+                    <p>Music streaming application.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Spotify')">+</button>
+
+            </div>
+
+
+
+            <!-- VC++ -->
+
+            <div class="category-title">
+                🧩 VC++
+            </div>
+
+
+            <div class="program-card"
+                 data-category="vc"
+                 data-name="VC Redist x64 2015+">
+
+                <div class="program-icon">🧩</div>
+
+                <div class="program-info">
+                    <h3>VC Redist x64 2015+</h3>
+                    <p>Microsoft Visual C++ Redistributable.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'VC Redist x64 2015+')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="vc"
+                 data-name="VC Redist x86 2015+">
+
+                <div class="program-icon">🧩</div>
+
+                <div class="program-info">
+                    <h3>VC Redist x86 (x32) 2015+</h3>
+                    <p>Microsoft Visual C++ Redistributable.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'VC Redist x86 2015+')">+</button>
+
+            </div>
+
+
+
+            <!-- IMAGING -->
+
+            <div class="category-title">
+                🎨 Imaging
+            </div>
+
+
+            <div class="program-card"
+                 data-category="imaging"
+                 data-name="Blender">
+
+                <div class="program-icon">🟠</div>
+
+                <div class="program-info">
+                    <h3>Blender</h3>
+                    <p>3D modeling and animation.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Blender')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="imaging"
+                 data-name="Paint.NET">
+
+                <div class="program-icon">🎨</div>
+
+                <div class="program-info">
+                    <h3>Paint.NET</h3>
+                    <p>Image editing software.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Paint.NET')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="imaging"
+                 data-name="GIMP">
+
+                <div class="program-icon">🖌️</div>
+
+                <div class="program-info">
+                    <h3>GIMP</h3>
+                    <p>Advanced image editor.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'GIMP')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="imaging"
+                 data-name="IrfanView">
+
+                <div class="program-icon">🖼️</div>
+
+                <div class="program-info">
+                    <h3>IrfanView</h3>
+                    <p>Fast image viewer.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'IrfanView')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="imaging"
+                 data-name="Inkscape">
+
+                <div class="program-icon">✒️</div>
+
+                <div class="program-info">
+                    <h3>Inkscape</h3>
+                    <p>Vector graphics editor.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Inkscape')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="imaging"
+                 data-name="FastStone">
+
+                <div class="program-icon">🖼️</div>
+
+                <div class="program-info">
+                    <h3>FastStone</h3>
+                    <p>Image viewer and tools.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'FastStone')">+</button>
+
+            </div>
+
+
+
+            <!-- UTILITIES -->
+
+            <div class="category-title">
+                🛠️ Utilities
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="AnyDesk">
+
+                <div class="program-icon">🖥️</div>
+
+                <div class="program-info">
+                    <h3>AnyDesk</h3>
+                    <p>Remote desktop software.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'AnyDesk')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="TeamViewer">
+
+                <div class="program-icon">🖥️</div>
+
+                <div class="program-info">
+                    <h3>TeamViewer</h3>
+                    <p>Remote access and support.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'TeamViewer')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="ImgBurn">
+
+                <div class="program-icon">💿</div>
+
+                <div class="program-info">
+                    <h3>ImgBurn</h3>
+                    <p>Disc image burning software.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'ImgBurn')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="RealVNC Server">
+
+                <div class="program-icon">🖥️</div>
+
+                <div class="program-info">
+                    <h3>RealVNC Server</h3>
+                    <p>Remote desktop server.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'RealVNC Server')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="RealVNC Viewer">
+
+                <div class="program-icon">🖥️</div>
+
+                <div class="program-info">
+                    <h3>RealVNC Viewer</h3>
+                    <p>Remote desktop viewer.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'RealVNC Viewer')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="CDBurnerXP">
+
+                <div class="program-icon">💿</div>
+
+                <div class="program-info">
+                    <h3>CDBurnerXP</h3>
+                    <p>CD and DVD burning software.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'CDBurnerXP')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="Revo Uninstaller">
+
+                <div class="program-icon">🧹</div>
+
+                <div class="program-info">
+                    <h3>Revo Uninstaller</h3>
+                    <p>Software removal utility.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Revo Uninstaller')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="WizTree">
+
+                <div class="program-icon">📊</div>
+
+                <div class="program-info">
+                    <h3>WizTree</h3>
+                    <p>Fast disk space analyzer.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'WizTree')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="CCleaner">
+
+                <div class="program-icon">🧹</div>
+
+                <div class="program-info">
+                    <h3>CCleaner</h3>
+                    <p>System cleaning utility.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'CCleaner')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="utilities"
+                 data-name="LibreOffice">
+
+                <div class="program-icon">📄</div>
+
+                <div class="program-info">
+                    <h3>LibreOffice</h3>
+                    <p>Free office productivity suite.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'LibreOffice')">+</button>
+
+            </div>
+
+
+
+            <!-- DEVELOPER TOOLS -->
+
+            <div class="category-title">
+                💻 Developer Tools
+            </div>
+
+
+            <div class="program-card"
+                 data-category="developer"
+                 data-name="Python">
+
+                <div class="program-icon">🐍</div>
+
+                <div class="program-info">
+                    <h3>Python</h3>
+                    <p>Programming language and runtime.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Python')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="developer"
+                 data-name="Git">
+
+                <div class="program-icon">🔀</div>
+
+                <div class="program-info">
+                    <h3>Git</h3>
+                    <p>Version control system.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Git')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="developer"
+                 data-name="Notepad++">
+
+                <div class="program-icon">📝</div>
+
+                <div class="program-info">
+                    <h3>Notepad++</h3>
+                    <p>Advanced text and code editor.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Notepad++')">+</button>
+
+            </div>
+
+
+            <div class="program-card"
+                 data-category="developer"
+                 data-name="Visual Studio Code">
+
+                <div class="program-icon">💻</div>
+
+                <div class="program-info">
+                    <h3>Visual Studio Code</h3>
+                    <p>Modern source code editor.</p>
+                </div>
+
+                <button class="add-btn"
+                    onclick="toggleProgram(this,'Visual Studio Code')">+</button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- INSTALL BAR -->
+
+    <div class="install-bar">
+
+        <div>
+
+            <span class="install-title">
+                📦 Your package
+            </span>
+
+            <span id="selectedText">
+                Select programs to continue
+            </span>
+
+        </div>
+
+
+        <button
+            class="install-btn"
+            onclick="installPrograms()">
+
+            🚀 Install Selected
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ABOUT -->
+
+    <section
+        class="about"
+        id="about">
+
+        <h2>
+            MyInstaller
+        </h2>
+
+        <p>
+            Your personal software installer.
+            Select the programs you need and
+            create your own Windows software package.
+        </p>
+
+
+        <div class="features">
+
+            <div>
+
+                ⚡
+
+                <h3>
+                    Fast
+                </h3>
+
+                <p>
+                    Find everything in one place.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                🔒
+
+                <h3>
+                    Simple
+                </h3>
+
+                <p>
+                    Choose only the programs you need.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                🎯
+
+                <h3>
+                    Your choice
+                </h3>
+
+                <p>
+                    Build your own software package.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <strong>
+            MyInstaller
+        </strong>
+
+        <span>
+            © 2026 MyInstaller
+        </span>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
